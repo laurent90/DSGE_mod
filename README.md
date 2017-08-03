@@ -11,8 +11,8 @@ in the respective papers.
 
 ## Compatibility
 
-These mod-files have been tested against the current unstable version, to be released
-as Dynare 4.5. Compatibility with earlier versions is not guaranteed.
+These mod-files have been tested against Dynare 4.5. Compatibility with 
+earlier versions is not guaranteed. 
 
 # Contributing your own mod-files
 
@@ -99,6 +99,23 @@ Implements the optimal monetary policy under commitment exercise of Jordi
 Galí (2008): Monetary  Policy, Inflation, and the Business Cycle, Princeton 
 University Press, Chapter 5.1.2. It shows how to use the ```ramsey_policy``` 
 command. 
+
+## Gali_2010
+
+### Gali_2010.mod 
+This file was written together with Lahcen Bounader. It replicates the results of the baseline sticky wage model 
+of Jordi Galí (2010): Monetary Policy and Unemployment, Handbook of Monetary Economics, Volume 3A, 
+Chapter 10, pp. 487-546.
+Please see the header of the mod-file for additional remarks.
+
+### Gali_2010_calib_target.mod 
+This file was written together with Lahcen Bounader. It implements the baseline sticky wage model 
+of Jordi Galí (2010): Monetary Policy and Unemployment, Handbook of Monetary Economics, Volume 3A, 
+Chapter 10, pp. 487-546. When doing so, it corrects issues with the original calibration of Gali (2010).
+It demonstrates how in a linearized model a steady_state-file can be used to set the deep parameters of the
+model to satisfy calibration targets on the non-linear model. The steady_state-file takes the calibration targets 
+and calls a numerical solver on some of the nonlinear steady state equations to get the corresponding parameters 
+that make the steady state satisfy the targets.
 
 ## Gali_2015
 
@@ -215,16 +232,26 @@ that requires recalibrating the model.
 This file replicates the estimation of the New Keynesian model of Jermann/Quadrini (2012) conducted and 
 described in Pfeifer (2016).
 
-## RBC_baseline.mod
+## RBC_baseline
+
+### RBC_baseline.mod
 
 This file presents a baseline RBC model with TFP and government spending shocks, calibrated to US data from 1947Q4:2016Q1. 
 The model setup is described in Handout_RBC_model.pdf and resembles the one in King/Rebelo (1999): Resuscitating Real Business Cycles, Handbook of Macroeconomics, Volume 1, and
 Romer (2012), Advanced macroeconomics, 4th edition. The driving processes are estimated as AR(1)-processes on linearly detrended data.
 
+### RBC_baseline_first_diff_bayesian
+
+Estimates the baseline RBC model on simulated data.
+
 ## RBC_capitalstock_shock.mod
 
 Implements a simple RBC model with a time t shock to the capital stock. 
 
+## RBC_IRF_matching.mod
+
+This file takes the baseline RBC model with TFP and government spending shocks, calibrated to US data from 1947Q4:2016Q1 and
+estimates the persistence of the AR(2) government spending shock via impulse response function (IRF) matching. 
 
 ## RBC_news_shock_model.mod
 
